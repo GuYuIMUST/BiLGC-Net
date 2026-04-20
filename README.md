@@ -13,11 +13,12 @@ Official PyTorch implementation of CMIA-Net for pulmonary embolism classificatio
 #Main Results
 # Main Results
 
-| Modality | Models | AUROC | Acc | F1 score | G-Mean | Specificity | Sensitivity | PPV | NPV |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-|    CT   | Our | 0.890 | 0.833 | 0.814 | 0.827 | 0.950 | 0.720 | 0.937 | 0.768 |
-|   EHR    | Our | 0.931 | 0.914 | 0.918 | 0.912 | 0.875 | 0.951 | 0.886 | 0.946 |
-|   Multimodal    | Our | 0.967 | 0.914 | 0.920 | 0.910 | 0.838 | 0.988 | 0.862 | 0.985 |
+| Models | AUROC | Acc | F1 score | G-Mean | Specificity | Sensitivity | PPV | NPV |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| RadFusion | 0.946 | 0.890 | 0.902 | 0.891 | 0.900 | 0.882 | 0.924 | 0.847 |
+| PECon | 0.943 | 0.900 | 0.913 | - | - | - | - | - |
+| PE-MVCNet | 0.941 | 0.902 | 0.906 | 0.935 | 0.932 | 0.939 | 0.899 | 0.932 |
+| Ours | 0.967 | 0.914 | 0.920 | 0.910 | 0.838 | 0.988 | 0.862 | 0.985 |
 
 #Data Prepare
 
