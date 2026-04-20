@@ -8,7 +8,7 @@ Official PyTorch implementation of CMIA-Net for pulmonary embolism classificatio
 1. To address the challenges of varying size of emboli and their complex spatial distributions in 3D CTPA images, we design a Local Pixel Attention (LPA) module for precise capture of fine-grained textures, along with an improved Global Sparse Attention (GSA) mechanism to model long-range dependencies, thereby significantly enhancing the model’s feature extraction capability.
 2. We design a dual-branch Bi-TabNet architecture, which is able to capture key features in electronic health records (EHR) tabular data. By strengthening the representation capability of tabular features, it lays a solid foundation for subsequent fusion with imaging features.
 3. We design a bidirectional cross-attention module for fusing CTPA imaging features and tabular features. This module effectively aligns and integrates the complementary information from the two modalities, improving the model’s accuracy and robustness in pulmonary embolism diagnosis.
-4.Through extensive training and optimization, the proposed model demonstrates excellent performance in pulmonary embolism diagnosis, outperforming existing state-of-the-art methods. Experimental results further show that the proposed approach has significant advantages and strong reliability in real-world clinical applications.
+4. Through extensive training and optimization, the proposed model demonstrates excellent performance in pulmonary embolism diagnosis, outperforming existing state-of-the-art methods. Experimental results further show that the proposed approach has significant advantages and strong reliability in real-world clinical applications.
 
 #Main Results
 # Main Results
