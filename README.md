@@ -1,16 +1,16 @@
 # CMIA-Net
 Official PyTorch implementation of CMIA-Net for pulmonary embolism classification using cross-modal fusion of CTPA scans and EHR data.
 
-#Overview
+# Overview
 <img width="1013" height="551" alt="整体" src="https://github.com/user-attachments/assets/d2de22ed-99ea-46d3-95e1-10f9bd59a8a5" />
 
-#Innovations
-1. To address the challenges of varying size of emboli and their complex spatial distributions in 3D CTPA images, we design a Local Pixel Attention (LPA) module for precise capture of fine-grained textures, along with an improved Global Sparse Attention (GSA) mechanism to model long-range dependencies, thereby significantly enhancing the model’s feature extraction capability.
-2. We design a dual-branch Bi-TabNet architecture, which is able to capture key features in electronic health records (EHR) tabular data. By strengthening the representation capability of tabular features, it lays a solid foundation for subsequent fusion with imaging features.
-3. We design a bidirectional cross-attention module for fusing CTPA imaging features and tabular features. This module effectively aligns and integrates the complementary information from the two modalities, improving the model’s accuracy and robustness in pulmonary embolism diagnosis.
-4. Through extensive training and optimization, the proposed model demonstrates excellent performance in pulmonary embolism diagnosis, outperforming existing state-of-the-art methods. Experimental results further show that the proposed approach has significant advantages and strong reliability in real-world clinical applications.
+# Innovations
+1.3D Image Processing:Extracts complex emboli features using LPA (Local Pixel Attention) and GSA (Global Sparse Attention).
 
-#Main Results
+2.EHR Tabular Modeling: Employs a dual-branch Bi-TabNet to capture key clinical features.
+
+3.Multimodal Fusion: Integrates imaging and tabular data via a bidirectional Cross-Modal Interaction Attention (CMIA) module.
+
 # Main Results
 
 | Models | AUROC | Acc | F1 score | G-Mean | Specificity | Sensitivity | PPV | NPV |
@@ -20,8 +20,36 @@ Official PyTorch implementation of CMIA-Net for pulmonary embolism classificatio
 | PE-MVCNet | 0.941 | 0.902 | 0.906 | 0.935 | 0.932 | 0.939 | 0.899 | 0.932 |
 | Ours | 0.967 | 0.914 | 0.920 | 0.910 | 0.838 | 0.988 | 0.862 | 0.985 |
 
-#Data Prepare
+# Pre-requisties
+· Windows
+· Python >= 3.10
+· CUDA == 12.8
+· PyTorch >= 2.0
 
-#Training and Inference
+# Getting started to evluate
+# Data preprocess
+1.Image Data:The preprocessing of the image data can follow this link https://github.com/marshuang80/penet In short,using
+create create_hdf5.py to make an hdf5 file.
+2.Tabular Data:The preprocessing of the tabular data can follow this link:https://github.com/LeavingStarW/PE-MVCNET/tree/main.In short,using LinearSVC for dimensionlity reduction on EHR data,then applying TabNet to generate embeddings.
 
-#Evaluation
+# Evaluation
+To run the evaluation,please execute the following command:
+```
+bash
+sh test.sh
+```
+
+To find the optimal threshold for the best results,please run:
+```
+python best_threshold.py
+```
+
+# Training
+To train the model from scratch,execute:
+```
+bash
+sh train.sh
+```
+
+# Data
+The data we used is form Standford University Medical Center dataset.You can download it from https://stanfordaimi.azurewebsites.net/datasets/3a7548a4-8f65-4ab7-85fa-3d68c9efc1bd.The tabular data we use can be downloaded from https://github.com/LeavingStarW/PE-MVCNET/blob/main/ehr_nosub_1.csv,where the preprocessed tabular data is already provided.
