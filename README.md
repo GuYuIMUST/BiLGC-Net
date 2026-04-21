@@ -30,6 +30,7 @@ Official PyTorch implementation of CMIA-Net for pulmonary embolism classificatio
 # Data preprocess
 1.Image Data:The preprocessing of the image data can follow this link https://github.com/marshuang80/penet In short,using
 create create_hdf5.py to make an hdf5 file.
+
 2.Tabular Data:The preprocessing of the tabular data can follow this link:https://github.com/LeavingStarW/PE-MVCNET/tree/main.In short,using LinearSVC for dimensionlity reduction on EHR data,then applying TabNet to generate embeddings.
 
 # Evaluation
